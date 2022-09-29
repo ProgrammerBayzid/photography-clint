@@ -7,34 +7,35 @@ import "./Home.css"
 const Home = () => {
 
     const [cart, setCart]= useState([]);
+
     const addToList =(gym)=>{
-        console.log(gym);
+      
         const newCart=[...cart, gym];
         setCart(newCart);
     }
 
 
     return (
-        <div className=' Home-Container'>
-               <div>
-               <div>
-                     <Nav></Nav>
-                </div>
-                 <div>
-                     <Gym 
-                     addToList={addToList}
+        <div className=' grid grid-cols-6'>
+               <div className='col-span-4'>
+                    <div>
+                        <Nav></Nav>
+                    </div>
+                     <div>
+                          <Gym 
+                          addToList={addToList}
                      
-                     ></Gym>
-                 </div>
+                           ></Gym>
+                     </div>
+                </div>
 
-               </div>
 
-
-            <div className='bg-slate-200'>
-                <Cart
-                cart={cart}
-                ></Cart>
-            </div>
+           <div className='bg-slate-100 '>
+                    <Cart
+                       cart={cart} setCart={setCart}
+                     ></Cart>
+               
+           </div>
         </div>
     );
 };

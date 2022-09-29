@@ -1,10 +1,4 @@
-.Home-Container{
+/* .Home-Container{
     display: grid;
-    grid-template-columns: 5fr 2fr;
-}
-@media screen and (sm-width:400px){
-    
-    .Home-Container{
-        grid-template-columns: 1fr 1fr;
-    }
-}
+    grid-template-columns: 6fr 2fr;
+} */
