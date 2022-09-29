@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Cart from '../Cart/Cart';
 import Gym from '../Gym/Gym';
 import Nav from '../Nav/Nav';
+import Question from '../Question/Question';
 import "./Home.css"
 
 const Home = () => {
@@ -16,8 +17,9 @@ const Home = () => {
 
 
     return (
-        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-               <div className='col-span-1  lg:col-span-2'>
+        <div >
+          <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+          <div className='col-span-1  lg:col-span-2'>
                     <div>
                         <Nav></Nav>
                     </div>
@@ -36,7 +38,20 @@ const Home = () => {
                      ></Cart>
                
            </div>
+          </div>
+
+
+           <div>
+            <Question></Question>
+           </div>
+
+
         </div>
+
+       
+          
+
+
     );
 };
 
