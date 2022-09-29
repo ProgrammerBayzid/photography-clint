@@ -1,19 +1,33 @@
 import React from 'react';
 import { useEffect, useState} from 'react';
-const Gym = () => {
+import SingleActivity from '../SingleActivity/SingleActivity';
+const Gym = (props) => {
+    const {addToList} = props;
 
-     const [gym , setGtm]= useState([]);
-
+     const [gyms , setGtms]= useState([]);
+     
      useEffect(()=>{
-        fetch('data.json')
+        fetch('/data.json')
          .then(res => res.json())
-         .then(data => setGtm(data))
-     },[])
+         .then(data => setGtms(data))
+     },[]);
+
+    
 
 
     return (
-        <div>
-            <h1>gym {gym.length}</h1>
+        <div className='w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+           {
+              gyms.map(gym => 
+              <SingleActivity
+               
+              key={ gym.id}
+              gym={gym}
+              addToList={addToList}
+              
+              
+              ></SingleActivity>)
+           }
         </div>
     );
 };
