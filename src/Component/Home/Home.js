@@ -3,6 +3,7 @@ import Cart from '../Cart/Cart';
 import Footer from '../Footer/Footer';
 import Gym from '../Gym/Gym';
 import Nav from '../Nav/Nav';
+import Navbar from '../Navbar/Navbar';
 import Question from '../Question/Question';
 import "./Home.css"
 
@@ -19,6 +20,11 @@ const Home = () => {
 
     return (
         <div >
+
+           <div>
+            <Navbar></Navbar>
+           </div>
+
           <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
           <div className='col-span-1  lg:col-span-2'>
                     <div>
