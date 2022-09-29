@@ -16,8 +16,8 @@ const Home = () => {
 
 
     return (
-        <div className=' grid grid-cols-6'>
-               <div className='col-span-4'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+               <div className='col-span-1  lg:col-span-2'>
                     <div>
                         <Nav></Nav>
                     </div>
@@ -30,7 +30,7 @@ const Home = () => {
                 </div>
 
 
-           <div className='bg-slate-100 '>
+           <div className=''>
                     <Cart
                        cart={cart} setCart={setCart}
                      ></Cart>

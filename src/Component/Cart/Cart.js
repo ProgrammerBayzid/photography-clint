@@ -34,7 +34,7 @@ const Cart = (props) => {
 
 {/* details  */}
                 
-         <div className='flex gap-10 ml-20 mr-0 p-7  rounded-3xl bg-red-300'>
+         <div className='flex gap-10 ml-20 mt-10   rounded-3xl '>
               <div>
               <h2 className='font-bold text-3xl'>55<span className='text-sm'>kg</span> <p className='text-sm'>Weight </p></h2>
               </div>
@@ -48,7 +48,7 @@ const Cart = (props) => {
    {/* details  */}     
 
 {/* select  */}
-         <div className='mt-10 flex gap-20 bg-zinc-400 ml-20 mr-40 p-5 rounded-3xl'>
+         <div className='mt-10 flex gap-5  ml-20 mr-40 p-5 rounded-3xl'>
             <h1 className=''>Select Exerise</h1>
             <h1>{cart.length}</h1>
          </div>
@@ -59,7 +59,7 @@ const Cart = (props) => {
          <div className='mt-10'>
             <h1 className='ml-20 font-bold text-2xl mb-4'>Add A Break</h1>
 
-            <div className='flex gap-10 ml-20 mr-40 p-7  rounded-3xl bg-red-300'>
+            <div className='flex gap-5 ml-20 mr-40 p-7  rounded-3xl '>
 
             <button onClick={handleAddToList} value= '10' className="btn btn-accent rounded-full w-2 h-1">10</button>
             <button onClick={handleAddToList} value= '20' className="btn btn-accent rounded-full w-2 h-1">20</button>
@@ -76,7 +76,7 @@ const Cart = (props) => {
 
          <div className=''>
          <h1 className='ml-20 font-bold text-2xl mt-6 mb-1'>Exerise Details</h1>
-            <div className='flex gap-10 justify-between mt-10 bg-zinc-400 ml-20 mr-40 p-5 rounded-3xl'>
+            <div className='flex gap-5 justify-between mt-10  ml-20 mr-40 p-5 rounded-3xl'>
             <h1 className=''>Exercise Time</h1>
             <div className='flex gap-1'>
             <h1>{total} </h1>
@@ -88,7 +88,7 @@ const Cart = (props) => {
  
 
  {/* brack time  */}
-         <div className='mt-10 flex gap-10 justify-between bg-zinc-400 ml-20 mr-40 p-5 rounded-3xl'>
+         <div className='mt-10 flex gap-5 justify-between  ml-20 mr-40 p-5 rounded-3xl'>
             <h1 className=''>Break Time</h1>
             <div className='flex gap-1'>
             <h1>{breakTime} </h1>
