@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Cart from '../Cart/Cart';
+import Footer from '../Footer/Footer';
 import Gym from '../Gym/Gym';
 import Nav from '../Nav/Nav';
 import Question from '../Question/Question';
@@ -43,6 +44,9 @@ const Home = () => {
 
            <div>
             <Question></Question>
+           </div>
+           <div>
+            <Footer></Footer>
            </div>
 
 
