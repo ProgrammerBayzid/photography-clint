@@ -15,7 +15,7 @@ const SingalTopic = ({ topic }) => {
                 <p className='mb-2 text-xl leading-none sm:text-2xl'><small>{name}</small></p>
 
                 <div className="flex flex-wrap justify-center">
-                    <Link to={`/Quiz/${id}`}>
+                    <Link to={`/quiz/${id}`}>
                         <button
                             type="button"
                             className="px-4 py-1 m-2 text-lg font-semibold rounded-full  text-gray-900 hover:bg-cyan-400 bg-cyan-200"
