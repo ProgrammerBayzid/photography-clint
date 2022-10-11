@@ -1,15 +1,16 @@
+import logo from './logo.svg';
 
-import Home from './Component/Home/Home';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Compo/Root';
 
 
 function App() {
-  return (
-    <div className="App">
-      
-      <Home></Home>
 
-    </div>
-  );
+   return (
+      <div>
+         <RouterProvider router={router}></RouterProvider>
+      </div>
+   );
 }
 
 
