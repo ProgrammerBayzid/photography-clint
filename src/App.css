@@ -6,14 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
-.container{
+
+.container {
   color: brown;
   background-color: aquamarine;
-  padding : 15px;
+  padding: 15px;
   border-radius: 15px;
-  
+
 }
-.person{
+
+.person {
   background-color: darkkhaki;
   border: 3px solid rebeccapurple;
   padding: 20px;
@@ -47,6 +49,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
