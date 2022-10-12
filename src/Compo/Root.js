@@ -1,6 +1,7 @@
 import { async } from "q";
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "./Blog";
+import ErrorPage from "./ErrorPage";
 import Main from "./Main";
 import QuixDeteails from "./QuixDeteails";
 import Statistics from "./Statistics";
@@ -9,6 +10,7 @@ import Topics from "./Topics";
 export const router = createBrowserRouter([
     {
         path: '/',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <Main></Main>,
         children: [
             {
