@@ -7,9 +7,12 @@ const SingalQuiz = ({ uestion }) => {
     const { id, question, correctAnswer, options } = uestion;
 
 
-    const handleRightAnsClick = () => {
-        if (correctAnswer) {
-            toast.success('sussecs')
+    const handleRightAnsClick = values => {
+        if (correctAnswer === values) {
+            toast.success('Right Answer', { autoClose: 500 })
+        }
+        else {
+            toast.error('Wrong Answer', { autoClose: 500 })
         }
     }
 
