@@ -3,7 +3,16 @@
 
 
 ## Live Link
-Hosted in Netlify -> [Quiz For Fun](https://shome-shop.netlify.app/)
+Hosted in Netlify -> [Quiz For Fun](https://quiz-for-fun.netlify.app/)
+
+
+# I do for this Project
+1.  Create react-app
+2.  Inatall react-router-dom
+3.  Dynamiclly data Lode korce
+4.  Do responsive 
+5.  Use Tailwind (fremwork)
+
 
 
 
