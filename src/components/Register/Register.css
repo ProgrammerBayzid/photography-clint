@@ -1,0 +1,37 @@
+.form-container {
+    width: 500;
+    height: 600;
+    margin-left: 560px;
+    margin-right: 560px;
+    margin-top: 60px;
+    padding: 5px;
+    border: 1px solid burlywood;
+    border-radius: 8px;
+
+}
+
+.form-title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+}
+
+.form-control label {
+    display: block;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 5px;
+
+}
+
+.card-body {
+    margin-left: 50px;
+}
+
+.btnd {
+    text-align: center;
+
+}
