@@ -1,17 +1,11 @@
-import logo from './logo.svg';
-
-import { RouterProvider } from 'react-router-dom';
-import { router } from './Compo/Root';
-
+import React from 'react'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './components/Routers'
 
 function App() {
-
-   return (
-      <div>
-         <RouterProvider router={router}></RouterProvider>
-      </div>
-   );
+  return (
+    <RouterProvider router={router}></RouterProvider>
+  )
 }
 
-
-export default App;
+export default App

@@ -1,27 +1,15 @@
-# Quiz For Fun Repository
-                        Best Quiz wesite For programmer Hero. The Best Quiz Website for Web devvelopar.
+# AuthenTech-Complete
+
+Live Link -> [AuthenTech](https://aunthcation.web.app/).
+
+Complete Project -> [AuthenTech-Complete](https://github.com/shakilahmedatik/authentech-complete).
+
+Firebase Doc -> [Firebase](https://firebase.google.com/docs/web/).
+
+Context API Doc -> [COntext API](https://reactjs.org/docs/context.html).
+
+React Router Dom Doc -> [React Router Dom](https://reactrouter.com/en/main).
+
+Tailwind CSS Doc -> [Tailwind CSS](https://tailwindcss.com/docs/installation).
 
 
-## Live Link
-Hosted in Netlify -> [Quiz For Fun](https://quiz-for-fun.netlify.app/)
-
-
-# I do for this Project
-1.  Create react-app
-2.  Inatall react-router-dom
-3.  Dynamiclly data Lode korce
-4.  Do responsive 
-5.  Use Tailwind (fremwork)
-
-
-
-
-
-
-## Resources & Credits
-Tailwind Components -> 
-[Mamba UI](https://www.mambaui.com/)
-[Kitwind](https://kitwind.io/products/kometa/components)
-
-## Other Resources
-Icon -> [HeroIcon](https://www.heroicon.com/)

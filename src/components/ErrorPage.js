@@ -38,8 +38,8 @@ const ErrorPage = () => {
             Sorry, we couldn't find this page.
           </p>
           <Link
-            to='/'
-            className='px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900'
+            to='/home'
+            className='px-8 py-3 font-semibold rounded bg-gray-900 hover:bg-gray-700 text-gray-100'
           >
             Back to homepage
           </Link>
