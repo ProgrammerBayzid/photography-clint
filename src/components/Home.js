@@ -1,52 +1,92 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
-import { AuthContext } from "../Context/Context"
+import React from 'react'
+import Lottie from 'lottie-react'
+import reader from '../assets/reader.json'
 
 const Home = () => {
-  const { user } = useContext(AuthContext)
-
   return (
-    <section>
-      <div className=''>
-        <div className='container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900'>
-          <h1 className='text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-900'>
-            Welcome To Authenticate
-          </h1>
-          <p className='mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900'>
-            Here, an user can authenticate using google or create an account
-            using email password. Powered by Firebase.!
-          </p>
-          <div className='flex flex-wrap justify-center'>
-
-            {user && user.uid ? <Link to='/profile'>
-              <button
-                type='button'
-                className='px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 hover:bg-gray-700 text-gray-50'
+    <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-24'>
+      <div className='flex flex-col items-center justify-between lg:flex-row'>
+        <div className='mb-10 lg:max-w-lg  lg:pr-5 lg:mb-0'>
+          <div className='max-w-xl mb-6 lg:mt-8'>
+            <div>
+              <p className='inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-yellow-400'>
+                On Sale!
+              </p>
+            </div>
+            <h2 className='max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
+              A reader lives a <br className='hidden md:block' /> thousand lives{' '}
+              <span className='inline-block text-blue-400'>before he dies</span>
+            </h2>
+            <p className='text-base text-gray-700 md:text-lg'>
+              Books are a uniquely portable magic. Books serve to show a man
+              that those original thoughts of his aren’t very new after all. The
+              man who does not read good books is no better than the man who
+              can’t.
+            </p>
+          </div>
+          <div className='flex flex-col items-center md:flex-row'>
+            <a
+              href='/books'
+              className='inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-blue-400 hover:bg-blue-700 focus:shadow-outline focus:outline-none'
+            >
+              <span className='mr-3'>Visit Store</span>
+              <svg
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                className='w-4'
               >
-                Visit Profile
-              </button>
-            </Link> : <> <Link to='/login'>
-              <button
-                type='button'
-                className='px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 hover:bg-gray-700 text-gray-50'
-              >
-                Login
-              </button>
-            </Link>
-
-              <Link to='/register'>
-                <button
-                  type='button'
-                  className='px-8 py-3 m-2 text-lg border rounded border-gray-700 text-gray-900'
-                >
-                  Register
-                </button>
-              </Link></>}
-
+                <polyline
+                  fill='none'
+                  stroke='currentColor'
+                  strokeMiterlimit='10'
+                  points='4,4 22,4 19,14 4,14 '
+                />
+                <circle
+                  cx='4'
+                  cy='22'
+                  r='2'
+                  strokeLinejoin='miter'
+                  strokeLinecap='square'
+                  stroke='none'
+                  fill='currentColor'
+                />
+                <circle
+                  cx='20'
+                  cy='22'
+                  r='2'
+                  strokeLinejoin='miter'
+                  strokeLinecap='square'
+                  stroke='none'
+                  fill='currentColor'
+                />
+                <polyline
+                  fill='none'
+                  stroke='currentColor'
+                  strokeMiterlimit='10'
+                  points='1,1 4,4 4,14 2,18 23,18 '
+                />
+              </svg>
+            </a>
+            <a
+              href='/about'
+              aria-label=''
+              className='inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-blue-700'
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div className='relative lg:w-1/2 '>
+          <div className='w-full lg:w-4/5 lg:ml-auto h-56  sm:h-96'>
+            <Lottie animationData={reader} loop={true} />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -1,15 +1,22 @@
-# AuthenTech-Complete
+# proReader Starter Repository
 
-Live Link -> [AuthenTech](https://aunthcation.web.app/).
+A simple React app built with React & React Router Dom.
 
-Complete Project -> [AuthenTech-Complete](https://github.com/shakilahmedatik/authentech-complete).
+## Live Link
+Hosted in Netlify -> [proReader](https://proredar.netlify.app/)
 
-Firebase Doc -> [Firebase](https://firebase.google.com/docs/web/).
+## API 
 
-Context API Doc -> [COntext API](https://reactjs.org/docs/context.html).
+Documentation Link -> [It Bookstore API](https://api.itbook.store/)
 
-React Router Dom Doc -> [React Router Dom](https://reactrouter.com/en/main).
+## React Router Dom v6.4 
 
-Tailwind CSS Doc -> [Tailwind CSS](https://tailwindcss.com/docs/installation).
+Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
 
+## Resources & Credits
 
+Tailwind Components -> [Kitwind](https://kitwind.io/products/kometa/components)
+
+Icon -> [FlatIcon](https://www.flaticon.com/)
+
+Lottie Animation -> [LottieFiles](https://lottiefiles.com/featured)
