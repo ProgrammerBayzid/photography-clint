@@ -1,22 +1,22 @@
-# proReader Starter Repository
+# Smart Home Starter Repository
 
-A simple React app built with React & React Router Dom.
+An E-commerce platform for buying high quality Smart Home Appliances at extremely affordable Price.
+
 
 ## Live Link
-Hosted in Netlify -> [proReader](https://proredar.netlify.app/)
+Hosted in Netlify -> [Smart Home](https://smart-home-shops.netlify.app/)
 
-## API 
+## Context API
 
-Documentation Link -> [It Bookstore API](https://api.itbook.store/)
+Documentation Link -> [Link](https://reactjs.org/docs/context.html#api)
 
 ## React Router Dom v6.4 
-
 Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
 
 ## Resources & Credits
+Tailwind Components -> 
+[Mamba UI](https://www.mambaui.com/)
+[Kitwind](https://kitwind.io/products/kometa/components)
 
-Tailwind Components -> [Kitwind](https://kitwind.io/products/kometa/components)
-
+## Other Resources
 Icon -> [FlatIcon](https://www.flaticon.com/)
-
-Lottie Animation -> [LottieFiles](https://lottiefiles.com/featured)
