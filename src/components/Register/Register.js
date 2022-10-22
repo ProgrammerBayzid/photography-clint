@@ -1,55 +1,110 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { AuthContext } from '../../Context/UserContext'
-import './Register.css'
+import React, { useContext, useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../Context/Context';
+import { toast } from 'react-toastify';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+
+    const { createUser, updateName, verifyEmail } = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const navigate = useNavigate()
+    const [accept, setAccept] = useState(false)
+
     const submit = (event) => {
-        event.preventDefault();
-        const from = event.target;
-        const email = from.email.value;
-        const password = from.password.value;
-        console.log(email, password,);
+        event.preventDefault()
+        const form = event.target
+        const name = form.name.value
+        const photoURL = form.photoURL.value
+        const email = form.email.value
+        const password = form.password.value
+        form.reset()
+
 
         createUser(email, password)
             .then(res => {
-                const user = res.user;
-                console.log(user);
-                // form.reset();
+                setError('')
+                navigate('/')
+                toast.success('Thanks For Registation')
+                handelUpdetUser(name, photoURL)
+                handelEmailVeryfi()
             })
-            .catch(err => {
-                console.error(err);
+            .catch(error => {
+                console.error(error);
+                setError(error.massage)
+            })
+
+    }
+    const handelUpdetUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateName(profile)
+            .then(() => {
+                toast.success('Update Profile')
+            })
+            .catch((error) => {
+                toast.error(error.massage)
+            });
+    }
+
+    const handelEmailVeryfi = () => {
+        verifyEmail()
+            .then(() => {
+                toast.success('Verify Your Email')
+            })
+            .catch(error => {
+                toast.error(error.massage)
             })
     }
+
+
+
+    const handelAccept = event => {
+        setAccept(event.target.checked)
+    }
+
+
     return (
-        <div className='form-container'>
-            <h3 className='form-title'>Sign-Up</h3>
-            <form onSubmit={submit} >
-                <div className="">
-                    <div className="card-body">
-                        <div className="form-control">
-                            <label >
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" name='email' placeholder="email" required />
-                        </div>
-                        <div className="form-control">
-                            <label >
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" name='password' placeholder="password" required />
+        <div>
+            <Form onSubmit={submit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Type Your Name</Form.Label>
+                    <Form.Control name='name' type="text" placeholder="Type Your Name" />
 
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Photo URL</Form.Label>
+                    <Form.Control name='photoURL' type="text" placeholder="Paste PhotoURL" />
 
-                            <label >
-                                <p>Allready Have An Account. Pleases.. <Link to="/login" className="label-text-alt link link-hover">Login</Link></p>
-                            </label>
-                        </div>
-                        <div className="btnd">
-                            <button className="btn">Sign-up</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control name='email' type="email" placeholder="Enter email" />
+
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control name='password' type="password" placeholder="Password" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check
+                        type="checkbox"
+                        onClick={handelAccept}
+                        label={<>Accept<Link to='/terms'> Terms and conditions</Link></>}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3 text-danger">
+                    {error}
+                </Form.Group>
+                <Button variant="primary" type="submit" disabled={!accept}>
+                    Sing Up
+                </Button>
+            </Form>
         </div>
     )
 }
