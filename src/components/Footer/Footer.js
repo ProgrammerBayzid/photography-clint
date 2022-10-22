@@ -1,9 +1,11 @@
 import React from 'react'
 
+
 const Footer = () => {
     return (
         <div>
-            <h2>This is footer</h2>
+            <h1 className='bg-primary text-center text-light rounded p-4'>Dragon News <span><p>@Dragon News. 2022. CopyRight</p></span></h1>
+
         </div>
     )
 }
