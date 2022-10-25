@@ -10,10 +10,12 @@ import Register from "../Login/Register/Register";
 import Premiem from "../Premiem/Premiem";
 import CourseDettiles from "../CourseDettiles/CourseDettiles";
 import PrivetRouts from "../PrivetRouts/PrivetRouts";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 export const routes = createBrowserRouter([
     {
         path: '/',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <Main></Main>,
         children: [
             {
