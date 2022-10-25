@@ -6,6 +6,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+.container{
+  color: brown;
+  background-color: aquamarine;
+  padding : 15px;
+  border-radius: 15px;
+  
+}
+.person{
+  background-color: darkkhaki;
+  border: 3px solid rebeccapurple;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
