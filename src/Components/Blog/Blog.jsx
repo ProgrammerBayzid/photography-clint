@@ -18,7 +18,7 @@ const Blog = () => {
                 </div>
 
                 <div className='mb-10 bg-zinc-800 text-white p-8 rounded-lg '>
-                    <h2 className='text-2xl font-bold text-amber-300'>03.How does the private route work?</h2>
+                    <h2 className='text-2xl font-bold text-amber-300'>04.How does the private route work?</h2>
                     <p><span className='text-xl font-bold text-amber-400'>Ans:</span> <span className='text-xl font-semibold'>The</span>The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.</p>
                 </div>
                 <div className='mb-10 bg-zinc-800 text-white p-8 rounded-lg '>

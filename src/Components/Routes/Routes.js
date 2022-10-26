@@ -59,8 +59,10 @@ export const routes = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/premiem',
-                element: <PrivetRouts><Premiem></Premiem></PrivetRouts>
+                path: '/courses/det/:categoryid',
+                element: <PrivetRouts><Premiem></Premiem></PrivetRouts>,
+                loader: ({ params }) => fetch(`https://learning-server-iota.vercel.app/courses/det/${params.categoryid}`)
+
             },
         ]
     }
