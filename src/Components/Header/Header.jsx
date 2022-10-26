@@ -154,24 +154,22 @@ const Header = () => {
                                                         {user?.uid ? <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user?.displayName ? user.displayName : 'Name Not Available'}>
                                                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                                                 <div>
-                                                                    <div className="w-10 rounded-full">
-                                                                        <span className='ms-2'>{user?.photoURL ?
-                                                                            <img src={user.photoURL} />
+                                                                    <Link to='/profile'>
 
-                                                                            :
-                                                                            <p>No Photo</p>
-                                                                        }</span>
+                                                                        <div className="w-10 rounded-full">
+                                                                            <span className='ms-2'>{user?.photoURL ?
+                                                                                <img src={user.photoURL} />
 
-                                                                    </div>
+                                                                                :
+                                                                                <p>No Photo</p>
+                                                                            }</span>
+
+                                                                        </div>
+                                                                    </Link>
+
                                                                 </div>
                                                             </label>
-                                                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                                                <li>
-                                                                    <Link to='/profile' className="justify-between switeh bg-secondary font-bold">
-                                                                        Profile
-                                                                    </Link>
-                                                                </li>
-                                                            </ul>
+
                                                         </div>
                                                             :
 

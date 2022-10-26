@@ -18,24 +18,24 @@ const Profile = () => {
     }
     return (
         <div className='grid justify-items-center mb-10 mt-10'>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl border p-2">
-                <div className="w-24 rounded-full ">
-                    <span className='ms-2 rounded-full'>{user?.photoURL ?
-                        <img src={user.photoURL} />
-                        :
-                        <p>No Photo</p>
-                    }</span>
+            <div className='card'>
+                <div className='w-24 items-center rounded-full'>
+                    <span className='rounded-full'>
+                        {user?.photoURL ?
+                            <img src={user.photoURL} />
+                            :
+                            <p>No Photo</p>}
+                    </span>
                 </div>
-                <div className="card-body  text-white">
+                <div>
                     <h2 className="card-title ">Name: {user?.displayName ? user.displayName : 'Name Not Available'}</h2>
                     <p>Email: {user?.email}</p>
                     <p>ID: {user?.uid} </p>
                     <p> Email Status: {user?.emailVerified ? <span className=''>Verified</span> : <span className=''>Not Verified</span>} </p>
-                    <button onClick={handelLogOut} className="btn btn-primary">Log Out</button>
-
                 </div>
             </div>
         </div>
+
     )
 }
 
