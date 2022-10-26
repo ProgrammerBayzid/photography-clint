@@ -5,15 +5,19 @@ import { AuthContext } from '../../Context/Contex'
 import Spinner from '../Spinner/Spinner'
 
 const PrivetRouts = ({ children }) => {
-    const { user, loading } = useContext(AuthContext)
-    const location = useLocation()
-    if (loading) {
+    const { user, loding } = useContext(AuthContext)
+    const location = useLocation();
+
+    if (loding) {
         return <Spinner></Spinner>;
     }
-    if (!user) {
+    else if (user) {
+        return children;
+    }
+    else {
         return <Navigate to='/login' state={{ from: location }} replace></Navigate>
     }
-    return children;
+
 }
 
 export default PrivetRouts

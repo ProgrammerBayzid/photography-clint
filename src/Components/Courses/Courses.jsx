@@ -20,8 +20,8 @@ const Courses = () => {
             </div>
             <div className=' grid lg:grid-cols-5 gap-24 '>
                 <div >
-                    <div className='ml-5 mt-10 border p-2 pb-4'>
-                        <h1 className='switeh text-2xl font-bold text-center mb-4'>Courses Topic</h1>
+                    <div className='ml-5 mt-10 border p-2 pb-4 cra'>
+                        <h1 className='switeh text-2xl bg-blue-400 p-1 rounded-lg font-bold text-center mb-4'>Courses Topic</h1>
                         {
                             allCourses.map(courses =>
                                 <CoursesName

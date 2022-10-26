@@ -6,7 +6,6 @@ import app from '../firebase/firebase'
 
 
 
-// const auth = getAuth(app)
 const auth = getAuth(app)
 
 export const AuthContext = createContext()
@@ -19,50 +18,45 @@ const Contex = ({ children }) => {
 
     // 1. createUser
     const createUser = (email, password) => {
-        setLoding(true)
-
+        setLoding(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
     // 2. ubdate name 
     const updateName = (profile) => {
-        setLoding(true)
-
+        setLoding(true);
         return updateProfile(auth.currentUser, profile)
     }
     // 3. verify email
     const verifyEmail = () => {
-        setLoding(true)
+        setLoding(true);
         return sendEmailVerification(auth.currentUser)
     }
 
 
     // 4. googleSignin
     const googleSignin = (gProvider) => {
-        setLoding(true)
-
+        setLoding(true);
         return signInWithPopup(auth, gProvider)
     }
 
     // 5. logOut
     const logOut = () => {
-        setLoding(true)
-
+        setLoding(true);
         return signOut(auth)
     }
     // 6. login 
     const login = (email, password) => {
-        setLoding(true)
-
+        setLoding(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
     // 7. forget password 
     const forgetPassword = (email) => {
-        setLoding(true)
+        setLoding(true);
         return sendPasswordResetEmail(auth, email)
     }
     // 7. singIn with github 
     const githubSingIn = (gitProvider) => {
-        setLoding(true)
+        setLoding(true);
         return signInWithPopup(auth, gitProvider)
     }
 
@@ -74,13 +68,14 @@ const Contex = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
 
             setUser(currentUser)
-            setLoding(false)
+            setLoding(false);
 
         })
         return () => {
             unSubscribe()
         }
     }, [])
+
     const authInfo = { user, loding, createUser, githubSingIn, updateName, verifyEmail, login, googleSignin, logOut, forgetPassword }
 
     return (
