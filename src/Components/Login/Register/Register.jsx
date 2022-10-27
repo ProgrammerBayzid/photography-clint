@@ -13,15 +13,7 @@ const Register = () => {
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider()
 
-    // const [error, setError] = useState({
-    //     email: '',
-    //     password: ''
-    // })
 
-    // const [userInfo, setUserInfo] = useState({
-    //     email: '',
-    //     password: ''
-    // })
 
 
 
@@ -193,7 +185,7 @@ const Register = () => {
                         <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                     </div>
                     <div className='flex justify-center space-x-4'>
-                        <button onClick={githumsubmit} aria-label='Log in with Google' className='p-3 rounded-sm'>
+                        <button onClick={googleSubmit} aria-label='Log in with Google' className='p-3 rounded-sm'>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 viewBox='0 0 32 32'
