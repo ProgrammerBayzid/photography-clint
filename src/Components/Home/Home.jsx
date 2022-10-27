@@ -2,7 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Lottie from 'lottie-react'
 import reader from '../../assets/reader.json'
+import Slider from '../Swiper/Slider'
+
 const Home = () => {
+
+
+
     return (
 
         <div>
@@ -84,6 +89,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
 
         </div>
 

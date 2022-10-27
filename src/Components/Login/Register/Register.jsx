@@ -127,6 +127,7 @@ const Register = () => {
                                     placeholder='Enter Your Name Here'
                                     className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
                                     data-temp-mail-org='0'
+                                    required
                                 />
                             </div>
                             <div>
@@ -153,6 +154,7 @@ const Register = () => {
                                     placeholder='Enter Your Email Here'
                                     className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
                                     data-temp-mail-org='0'
+                                    required
                                 />
                             </div>
                             <div>
@@ -167,7 +169,9 @@ const Register = () => {
                                     id='password'
                                     placeholder='*******'
                                     className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900'
+                                    required
                                 />
+
                             </div>
                         </div>
                         <div className='space-y-2'>
@@ -225,38 +229,6 @@ const Register = () => {
 export default Register
 
 
-
-
-
-
-
-
-
-// const handelEmailChange = (event) => {
-//     const email = event.target.value;
-//     if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-//         setError({ ...error, email: "Please Provide a Valid email" });
-//         setUserInfo({ ...userInfo, email: '' })
-//     }
-//     else {
-//         setError({ ...error, email: "" });
-//         setUserInfo({ ...userInfo, email: event.target.value })
-
-//     }
-// }
-
-// const handelPasswordChange = (event) => {
-//     const password = event.target.value;
-//     if (password.length < 6) {
-//         setError({ ...error, password: "Must be at least 6 characters" });
-//         setUserInfo({ ...userInfo, password: '' })
-//     }
-//     else {
-//         setError({ ...error, password: "" });
-//         setUserInfo({ ...userInfo, password: event.target.value })
-
-//     }
-// }
 
 
 

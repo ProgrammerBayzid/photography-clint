@@ -79,7 +79,7 @@ const Login = () => {
                                     data-temp-mail-org='0'
                                 />
                             </div>
-                            <p>{emailError}</p>
+                            <p className='text-red-500	'>{emailError}</p>
 
                             <div>
                                 <div className='flex justify-between'>
@@ -96,7 +96,7 @@ const Login = () => {
                                 />
                             </div>
                         </div>
-                        <p>{error}</p>
+                        <p className='text-red-500	'>{error}</p>
                         <div>
                             <button
 

@@ -34,6 +34,14 @@ const Profile = () => {
                     <p> Email Status: {user?.emailVerified ? <span className=''>Verified</span> : <span className=''>Not Verified</span>} </p>
                 </div>
             </div>
+            <div className='mt-5'>
+                <button
+                    onClick={handelLogOut}
+                    className='w-full px-8 py-3 font-bold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
+                >
+                    Log Out
+                </button>
+            </div>
         </div>
 
     )
