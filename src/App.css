@@ -1,53 +1,19 @@
-/* .App {
+.App {
   text-align: center;
-} */
+}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-#light {
-  background-color: white;
-}
-
-#dark {
-  background-color: black;
-}
-
-#light .main {
-  background-color: white;
-}
-
-#dark .main {
-  background-color: black;
-}
-
-#light .switeh {
-  color: black;
-}
-
-#dark .switeh {
-  color: white;
-}
-
-#light .switeh text {
-  color: black;
-}
-
-#dark .switeh text {
-  color: rgb(241, 236, 236);
-}
-
-.container {
+.container{
   color: brown;
   background-color: aquamarine;
-  padding: 15px;
+  padding : 15px;
   border-radius: 15px;
-
+  
 }
-
-.person {
+.person{
   background-color: darkkhaki;
   border: 3px solid rebeccapurple;
   padding: 20px;
@@ -81,7 +47,6 @@
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }

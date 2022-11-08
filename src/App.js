@@ -1,22 +1,19 @@
-import { useState } from "react";
-import { createContext } from "react";
-import { RouterProvider } from "react-router-dom";
-import { routes } from "./Components/Routes/Routes";
-import "./App.css"
-export const ThemContext = createContext(null)
-function App() {
-  const [theme, setTheme] = useState("light");
-  const themToggel = () => {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"))
-  }
-  return (
-    <ThemContext.Provider value={{ theme, themToggel }}>
-      <div className="App" id={theme}>
-        <RouterProvider router={routes}></RouterProvider>
-      </div >
-    </ThemContext.Provider>
+import { useState } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import './App.css';
+import { router } from './Components/Routes/Router';
 
+
+
+function App() {
+  const [darkMode, setDarkMode] = useState(false)
+  return (
+    <div className='max-w-screen-xl mx-auto'>
+
+      <RouterProvider router={router}></RouterProvider>
+    </div>
   );
 }
+
 
 export default App;

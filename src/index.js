@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Contex from './Context/Contex';
-import 'react-toastify/dist/ReactToastify.css'
+import Context from './Components/Context/Context';
 import { ToastContainer } from 'react-toastify';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Contex>
+    <Context>
       <ToastContainer position='top-center' />
       <App />
-    </Contex>
+    </Context>
+
   </React.StrictMode>
 );
 
