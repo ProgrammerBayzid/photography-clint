@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { useEffect } from 'react'
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context';
 import PurchaseService from './PurchaseService';
 
 const Order = () => {
+    useTitle('order')
+
     const { user } = useContext(AuthContext);
 
     const [orders, setOrders] = useState([]);

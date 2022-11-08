@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Services = () => {
+    useTitle('services')
+
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/services')

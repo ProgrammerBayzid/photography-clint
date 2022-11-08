@@ -6,10 +6,13 @@ import About from './About';
 import PhotoGleary from './PhotoGleary';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Single from './Single';
+import useTitle from '../../hooks/useTitle';
 
 
 
 const Home = () => {
+    useTitle('home')
+
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/services')

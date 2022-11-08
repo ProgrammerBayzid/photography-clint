@@ -3,12 +3,15 @@ import { FaGithubAlt, FaGoogle } from 'react-icons/fa'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import img2 from '../../assets/img/banner-img/img2.png'
+import useTitle from '../../hooks/useTitle'
 import { AuthContext } from '../Context/Context'
 import Github from './SocialAccount/Github'
 import Google from './SocialAccount/Google'
 
 
 const Login = () => {
+    useTitle('login')
+
     const { login, forgetPassword } = useContext(AuthContext)
     const [userEmail, setUserEmail] = useState('')
     const [error, setError] = useState('')

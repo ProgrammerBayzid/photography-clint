@@ -1,6 +1,8 @@
 import React from 'react'
 
 const EditReview = () => {
+    useTitle('edit-')
+
     return (
         <div>
             <form onSubmit={placeReview}>

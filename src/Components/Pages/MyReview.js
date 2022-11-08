@@ -3,10 +3,12 @@ import { useEffect } from 'react';
 import { useContext } from 'react'
 import { FaStar } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context'
 import Table from './Table';
 
 const MyReview = () => {
+    useTitle('my-reviews')
 
     const { user } = useContext(AuthContext);
 
