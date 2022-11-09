@@ -3,9 +3,11 @@ import { useContext } from 'react';
 import { FaStarHalfAlt } from 'react-icons/fa'
 import { useLoaderData } from 'react-router-dom'
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context';
 
 const ServiceDittels = () => {
+    useTitle('servicer-details')
     const service = useLoaderData();
     const { user } = useContext(AuthContext)
     const email = user?.email;
@@ -42,7 +44,8 @@ const ServiceDittels = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    toast.success('Review Add Successfully')
+                    toast.success('Place Order Successfully')
+                    form.reset()
                 }
             })
             .catch(err => console.log(err));
@@ -83,6 +86,8 @@ const ServiceDittels = () => {
                 console.log(data)
                 if (data.acknowledged) {
                     toast.success('Review Add Successfully')
+                    form.reset()
+
                 }
             })
             .catch(err => console.log(err));
@@ -96,14 +101,14 @@ const ServiceDittels = () => {
             <div>
                 <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Services </span> Details <br /> <span className='text-2xl'>And </span>
                     <br /> <span className='text-2xl'>FeedBack </span></h1>
-                <div className="card grid lg:grid-cols-2 bg-base-100 shadow-xl">
+                <div data-aos="flip-down" className="card grid lg:grid-cols-2 bg-base-100 shadow-xl">
                     <figure><img className='w-96' src={img} alt="Album" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{title}</h2>
                         <p className='w-90'>{description}</p>
                         <div className="card-actions justify-end">
 
-                            <label htmlFor="my-modal-3" className="btn btn-primary">open modal</label>
+                            <label htmlFor="my-modal-3" className="btn btn-primary">Place Order</label>
                         </div>
                         <div className="card-actions justify-end flex justify-between items-center">
                             <div>
@@ -137,7 +142,7 @@ const ServiceDittels = () => {
 
                                 </textarea>
                                 <input type="email" placeholder="email" defaultValue={user?.email} className="input input-bordered input-sm w-full " readOnly />
-                                <button className="btn btn-active btn-secondary " type='submit'>Place Order</button>
+                                <button className="btn btn-active btn-secondary " type='submit'>Confirm Order</button>
                             </div>
                             <div className='text-center mt-5'>
 
@@ -149,9 +154,10 @@ const ServiceDittels = () => {
 
 
 
+            <h1 data-aos="zoom-in-down" className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Add </span> Feedback <br />
+            </h1>
 
-
-            <form onSubmit={placeReview}>
+            <form data-aos="zoom-in-down" onSubmit={placeReview}>
                 <div>
                     <div className='grid lg:ml-20 lg:grid-cols-2  grid-cols-1 gap-5 mt-5 '>
                         <input type="text" name='name' placeholder="Name" className="input input-bordered input-sm w-full " required />

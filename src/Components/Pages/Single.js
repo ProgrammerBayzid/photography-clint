@@ -6,8 +6,8 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 const Single = ({ ser }) => {
     const { img, title, description, price, ratting, _id } = ser
     return (
-        <div>
-            <div className="card  lg:w-80 md:w-60 sm:w-36  bg-base-100 shadow-xl">
+        <div >
+            <div data-aos="zoom-in" className="card  lg:w-80 md:w-60 sm:w-36  bg-base-100 shadow-xl">
 
                 <figure>
 

@@ -35,7 +35,7 @@ const Footer = () => {
             <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                 <div className="items-center grid-flow-col">
                     <img className='w-20 rounded-full' src="https://i.ibb.co/c2nT5YP/logo-png.jpg" alt="" srcset="" />
-                    <p>Photo_Henter. <br />Providing By Bayzid 2021</p>
+                    <p>Photo_Henter. <br />Providing By Bayzid #Copywrite Issue 2021</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">

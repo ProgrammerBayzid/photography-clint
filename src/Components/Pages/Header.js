@@ -71,7 +71,7 @@ const Header = () => {
 
                                     <div className="w-10 rounded-full">
                                         <span className='ms-2'>{user?.photoURL ?
-                                            <img src={user.photoURL} />
+                                            <img className='rounded-full' src={user.photoURL} />
 
                                             :
                                             <p>No Photo</p>

@@ -65,7 +65,7 @@ const MyReview = () => {
             body: JSON.stringify(edit)
         }).then(res => res.json())
             .then(data => {
-
+                console.log(data);
             })
 
 
@@ -74,6 +74,7 @@ const MyReview = () => {
 
     return (
         <div>
+            <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>My </span> Reviews</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 

@@ -42,16 +42,20 @@ const Order = () => {
 
 
     return (
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 '>
-            {
-                orders.map(odr =>
-                    <PurchaseService
-                        key={odr._id}
-                        oder={odr}
-                        handelDeeted={handelDeeted}
-                    ></PurchaseService>)
-            }
+        <div>
+            <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>My </span> Orders</h1>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 '>
+                {
+                    orders.map(odr =>
+                        <PurchaseService
+                            key={odr._id}
+                            oder={odr}
+                            handelDeeted={handelDeeted}
+                        ></PurchaseService>)
+                }
+            </div>
         </div>
+
     )
 }
 

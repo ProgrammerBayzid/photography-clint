@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Context from './Components/Context/Context';
+import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify';
 
 
@@ -12,6 +13,7 @@ root.render(
   <React.StrictMode>
     <Context>
       <ToastContainer position='top-center' />
+
       <App />
     </Context>
 

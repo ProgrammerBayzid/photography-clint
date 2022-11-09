@@ -6,16 +6,16 @@ import { AuthContext } from '../Context/Context';
 
 const Table = ({ review, handelDeeted, handelEdit }) => {
     const { user } = createContext(AuthContext);
-    const { userImg, _id, serviceTitle, reviewerName, feedback, ratting, email } = review;
+    const { serviceImg, userImg, _id, serviceTitle, reviewerName, feedback, ratting, email } = review;
 
 
 
     return (
 
         <tbody>
-            <tr>
+            <tr data-aos="fade-right">
                 <th>
-                    <label>
+                    <label className='btn'>
                         <button onClick={() => handelDeeted(_id)}>X</button>
                     </label>
                 </th>
@@ -23,7 +23,7 @@ const Table = ({ review, handelDeeted, handelEdit }) => {
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
                             <div className="mask mask-squircle w-12 h-12">
-                                <img src={userImg} />
+                                <img src={serviceImg} />
                             </div>
                         </div>
                         <div>
@@ -76,7 +76,7 @@ const Table = ({ review, handelDeeted, handelEdit }) => {
 
 
                         <div className="modal-action">
-                            <label htmlFor="my-modal" className="btn">Yay!</label>
+                            <label htmlFor="my-modal" className="btn">X</label>
                         </div>
                     </div>
                 </div>

@@ -15,11 +15,11 @@ const Services = () => {
     return (
         <div>
             <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>My </span> Services</h1>
-            <div className='grid ml-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 '>
+            <div className='grid ml-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1' data-aos="fade-up">
                 {
                     services.map(ser => {
                         return (
-                            <div>
+                            <div data-aos="zoom-out-down">
                                 <div className="card  lg:w-80 md:w-60 sm:w-36  bg-base-100 shadow-xl">
                                     <figure><img src={ser.img} alt="Shoes" /></figure>
                                     <div className="card-body">

@@ -74,10 +74,12 @@ const PhotoGleary = () => {
 
 
 
-        <div className='ml-10'>
+        <div className='lg:ml-10'>
+            <div data-aos="zoom-out">
+                <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Photo </span> Gallery</h1>
+            </div>
 
 
-            <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Photo </span> Gallery</h1>
 
             <div>
                 <div>
@@ -103,10 +105,11 @@ const PhotoGleary = () => {
                 <ResponsiveMasonry
                     columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
                 >
-                    <Masonry>
+                    <Masonry >
                         {
                             gelaryPhotoData.map(photo => (
                                 <img
+                                    data-aos="zoom-in-down"
                                     key={photo.id}
                                     src={photo.img}
                                     style={{ width: '100 %', display: "block", cursor: 'pointer' }}

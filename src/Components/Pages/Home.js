@@ -15,7 +15,7 @@ const Home = () => {
 
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('http://localhost:5000/services/home')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -25,8 +25,11 @@ const Home = () => {
             <Banner></Banner>
             <div>
 
-                <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>My </span> Services</h1>
-                <div className='grid ml-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 '>
+                <div data-aos="zoom-out">
+                    <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>My </span> Services</h1>
+
+                </div>
+                <div className='grid lg:ml-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 '>
                     {
                         services.map(ser =>
                             <Single
@@ -37,12 +40,12 @@ const Home = () => {
 
 
                 </div>
-                <div className='text-center'>
+                <div data-aos="flip-up" className='text-center'>
                     <Link to='/services'><button className="btn btn-active btn-secondary mt-10 ">View All Services</button></Link>
                 </div>
 
             </div>
-            <hr className='mt-10' />
+            <hr className='mt-10 text-black font-semibold' />
             <About></About>
             <PhotoGleary></PhotoGleary>
 
@@ -61,36 +64,3 @@ export default Home
 
 
 
-// {
-//     return (
-//         <div>
-//             <div className="card  lg:w-80 md:w-60 sm:w-36  bg-base-100 shadow-xl">
-//                 <figure><img src={ser.img} alt="Shoes" /></figure>
-//                 <div className="card-body">
-//                     <h2 className="card-title">
-//                         {ser.title}
-
-//                     </h2>
-//                     <p>
-
-//                         {
-//                             ser.description.length > 200 ?
-//                                 <>{ser.description.slice(0, 100) + '...'}</>
-//                                 :
-//                                 <span >{ser.description}</span>
-//                         }
-//                         <Link to=''><div className="badge badge-outline">Read More</div></Link>
-
-//                     </p>
-//                     <div className="card-actions justify-end flex justify-between items-center">
-//                         <div>
-//                             Price: {ser.price}$
-//                         </div>
-//                         <div className="badge gap-2"><FaStarHalfAlt className='text-warning'></FaStarHalfAlt>  {ser.ratting}</div>
-
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
