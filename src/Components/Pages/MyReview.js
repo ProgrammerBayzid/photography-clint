@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useContext } from 'react'
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context'
@@ -113,6 +114,10 @@ const MyReview = () => {
                                     handelDeeted={handelDeeted}
                                     handelEdit={handelEdit}
                                 ></Table>)
+
+                        }
+                        {
+                            reviews.length === 0 && <h2>No Review Added Please.... <Link to="/services">Add Review</Link></h2>
 
                         }
 

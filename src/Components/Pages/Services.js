@@ -51,13 +51,15 @@ const Services = () => {
                                                 Price: {ser.price}$
                                             </div>
                                             <div className="badge gap-2"><FaStarHalfAlt className='text-warning'></FaStarHalfAlt>  {ser.ratting}</div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         )
                     })
+                }
+                {
+                    services.length === 0 && <Spinner></Spinner>
                 }
 
 

@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context';
 import Feedback from './Feedback';
+import Spinner from './Spinner';
 
 const ServiceDittels = () => {
     useTitle('servicer-details')
@@ -104,8 +105,9 @@ const ServiceDittels = () => {
             .catch(err => console.log(err));
     }
 
-    return (
 
+
+    return (
         <div>
 
 
@@ -134,7 +136,7 @@ const ServiceDittels = () => {
             <div>
             </div>
 
-            {/* The button to open modal */}
+
 
 
             {/* Put this part before </body> tag */}
@@ -190,6 +192,7 @@ const ServiceDittels = () => {
                                 ></Feedback>)
                         }
 
+
                     </>
                 </div>
 
@@ -219,6 +222,8 @@ const ServiceDittels = () => {
             </div>
         </div>
     )
+
+
 }
 
 export default ServiceDittels
