@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { FaGithubAlt, FaGoogle } from 'react-icons/fa'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+// import { setAuthToken } from '../../api/auth'
 import img2 from '../../assets/img/banner-img/img2.png'
 import useTitle from '../../hooks/useTitle'
 import { AuthContext } from '../Context/Context'
@@ -26,16 +27,34 @@ const Login = () => {
         const form = event.target
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password);
 
 
         login(email, password)
             .then((res) => {
+                const user = res.user;
+
                 setemailError('')
                 setError('')
-                navigate(from, { replace: true })
-                form.reset()
                 toast.success('Login Success')
+                form.reset()
+                // get jwt toke 
+                const currentUser = {
+                    email: user.email
+                }
+                fetch('https://photograghy-server.vercel.app/jwt', {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem("token", data.token)
+                        navigate(from, { replace: true })
+                    })
+
 
             })
             .catch((error) => {
@@ -56,6 +75,11 @@ const Login = () => {
             .catch(error => toast.error(error.message))
     }
 
+
+    // get jwt token 
+    // const jwtToken = (currentUser) => {
+
+    // }
 
 
 

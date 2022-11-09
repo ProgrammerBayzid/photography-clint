@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react'
+import { useContext } from 'react';
 import { FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { AuthContext } from '../Context/Context';
+import Spinner from './Spinner';
 
 const Services = () => {
     useTitle('services')
 
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://photograghy-server.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
+
+
+
     return (
+
+
         <div>
             <h1 className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>My </span> Services</h1>
             <div className='grid ml-12 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1' data-aos="fade-up">
@@ -57,7 +65,16 @@ const Services = () => {
 
 
         </div>
+
+
+
+
+
+
+
     )
 }
+
+
 
 export default Services

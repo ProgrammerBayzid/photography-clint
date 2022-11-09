@@ -10,22 +10,35 @@ import Table from './Table';
 const MyReview = () => {
     useTitle('my-reviews')
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const [reviews, setReviews] = useState([]);
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setReviews(data))
+        fetch(`https://photograghy-server.vercel.app/reviews?email=${user?.email}`,
+            {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    logOut()
+                }
+                return res.json()
+            })
+            .then(data => {
+                setReviews(data)
+            }
+            )
 
     }, [user?.email])
 
     const handelDeeted = id => {
         const proced = window.confirm('Are You Sure')
         if (proced) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://photograghy-server.vercel.app/reviews/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -57,7 +70,7 @@ const MyReview = () => {
             feedback,
             email,
         };
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://photograghy-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json"
@@ -113,3 +126,16 @@ const MyReview = () => {
 }
 
 export default MyReview
+
+
+
+
+
+
+
+
+
+
+
+
+

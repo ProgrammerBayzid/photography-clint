@@ -2,7 +2,9 @@ import { GoogleAuthProvider } from 'firebase/auth'
 import React from 'react'
 import { useContext } from 'react'
 import { FaGoogle } from 'react-icons/fa'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { setAuthToken } from '../../../api/auth'
 import { AuthContext } from '../../Context/Context'
 
 const Google = () => {
@@ -10,13 +12,16 @@ const Google = () => {
     const { googleSignin } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
 
+    const navigate = useNavigate()
+
 
     const googleSubmit = () => {
         googleSignin(googleProvider)
             .then((result) => {
                 toast.success('Register Success')
                 const user = result.user;
-                console.log(user);
+                setAuthToken(user)
+                navigate('/')
             })
             .catch(error => console.error(error))
     }

@@ -6,6 +6,10 @@ const BannerItem = ({ banner }) => {
     const { image, id, prev, next } = banner;
 
     return (
+
+
+
+
         <div id={`slide${id}`} className="carousel-item relative w-full">
             <div className='img-gredent'>
                 <img src={image} className="w-full rounded-xl" />
@@ -22,7 +26,17 @@ const BannerItem = ({ banner }) => {
                 <a href={`#slide${next}`} className="btn btn-circle">❯</a>
             </div>
         </div>
+
     )
 }
 
 export default BannerItem
+
+
+
+
+
+
+
+
+

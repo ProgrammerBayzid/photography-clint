@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { useContext } from 'react';
-import { FaStarHalfAlt } from 'react-icons/fa'
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
 import { useLoaderData } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context';
+import Feedback from './Feedback';
 
 const ServiceDittels = () => {
     useTitle('servicer-details')
+
     const service = useLoaderData();
     const { user } = useContext(AuthContext)
     const email = user?.email;
     const { img, title, description, price, ratting, _id } = service;
+
+    const [feedbacks, setFeedbacks] = useState([])
+    // services feedback
+
+    useEffect(() => {
+        fetch('https://photograghy-server.vercel.app/allreviews')
+            .then(res => res.json())
+            .then(data => setFeedbacks(data))
+    }, []);
 
     const placeOrder = e => {
         e.preventDefault();
@@ -33,7 +45,7 @@ const ServiceDittels = () => {
             price,
             userImg: user?.photoURL
         };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://photograghy-server.vercel.app/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -51,8 +63,7 @@ const ServiceDittels = () => {
             .catch(err => console.log(err));
 
 
-    }
-
+    };
 
 
     const placeReview = event => {
@@ -74,7 +85,7 @@ const ServiceDittels = () => {
             userImg: user.photoURL,
         };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://photograghy-server.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -154,27 +165,58 @@ const ServiceDittels = () => {
 
 
 
-            <h1 data-aos="zoom-in-down" className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Add </span> Feedback <br />
-            </h1>
+            <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
 
-            <form data-aos="zoom-in-down" onSubmit={placeReview}>
                 <div>
-                    <div className='grid lg:ml-20 lg:grid-cols-2  grid-cols-1 gap-5 mt-5 '>
-                        <input type="text" name='name' placeholder="Name" className="input input-bordered input-sm w-full " required />
-                        <input type="text" name='ratting' placeholder="ratting" className="input input-bordered input-sm w-full " required />
-                        <textarea required className="textarea textarea-primary"
-                            name='feedback'
-                            placeholder="Type your feedback">
+                    <h1 data-aos="zoom-in-down" className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Service </span> Feedback <br />
+                    </h1>
+                    <thead>
+                        <tr>
 
-                        </textarea>
-                        <input type="email" placeholder="email" defaultValue={user?.email} className="input input-bordered input-sm w-full " readOnly />
-                        <button className="btn btn-active btn-secondary " type='submit'>Place Review</button>
-                    </div>
-                    <div className='text-center mt-5'>
+                            <th> services Name</th>
+                            <th>Feedback</th>
+                            <th>Ratting</th>
 
-                    </div>
+                        </tr>
+                    </thead>
+
+
+                    <>
+                        {
+                            feedbacks.map(fdb =>
+                                <Feedback
+                                    key={fdb._id}
+                                    fdb={fdb}
+                                ></Feedback>)
+                        }
+
+                    </>
                 </div>
-            </form>
+
+                <div>
+                    <h1 data-aos="zoom-in-down" className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Add </span> Feedback <br />
+                    </h1>
+
+                    <form data-aos="zoom-in-down" onSubmit={placeReview}>
+                        <div>
+                            <div className='grid lg:ml-20 lg:grid-cols-2  grid-cols-1 gap-5 mt-5 '>
+                                <input type="text" name='name' placeholder="Name" className="input input-bordered input-sm w-full " required />
+                                <input type="text" name='ratting' placeholder="ratting" className="input input-bordered input-sm w-full " required />
+                                <textarea required className="textarea textarea-primary"
+                                    name='feedback'
+                                    placeholder="Type your feedback">
+
+                                </textarea>
+                                <input type="email" placeholder="email" defaultValue={user?.email} className="input input-bordered input-sm w-full " readOnly />
+                                <button className="btn btn-active btn-secondary " type='submit'>Place Review</button>
+                            </div>
+                            <div className='text-center mt-5'>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }

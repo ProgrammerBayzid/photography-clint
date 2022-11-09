@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { FaFacebook, FaGitAlt, FaGoogle } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { setAuthToken } from '../../api/auth'
 import img2 from '../../assets/img/banner-img/img2.png'
 import { AuthContext } from '../Context/Context'
 import Github from './SocialAccount/Github'
@@ -24,6 +25,8 @@ const Register = () => {
 
         createUser(email, password)
             .then(res => {
+                const user = res.user;
+                setAuthToken(user)
                 navigate('/')
                 toast.success('Thanks For Registation')
                 handelUpdetUser(name)

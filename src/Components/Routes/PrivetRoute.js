@@ -10,12 +10,12 @@ const PrivetRoute = ({ children }) => {
     if (loding) {
         return <Spinner></Spinner>;
     }
-    else if (user) {
+    if (user) {
         return children;
     }
-    else {
-        return <Navigate to='/login' state={{ from: location }} replace></Navigate>
-    }
+
+    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+
 }
 
 export default PrivetRoute

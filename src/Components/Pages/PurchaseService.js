@@ -18,7 +18,7 @@ const PurchaseService = ({ oder, handelDeeted }) => {
 
 
     return (
-        <div data-aos="zoom-out-down">
+        <div >
             <div className="card w-80 bg-base-100 shadow-xl image-full">
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body">

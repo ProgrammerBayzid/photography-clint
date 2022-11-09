@@ -13,7 +13,7 @@ const Table = ({ review, handelDeeted, handelEdit }) => {
     return (
 
         <tbody>
-            <tr data-aos="fade-right">
+            <tr>
                 <th>
                     <label className='btn'>
                         <button onClick={() => handelDeeted(_id)}>X</button>

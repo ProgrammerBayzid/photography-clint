@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddService from "../Pages/AddService";
 import Blog from "../Pages/Blog";
+import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import LogOut from "../Pages/LogOut";
@@ -17,7 +18,7 @@ import PrivetRoute from "./PrivetRoute";
 export const router = createBrowserRouter([
     {
         path: '/',
-
+        errorElement: <ErrorPage></ErrorPage>,
         element: <Main></Main>,
         children: [
             {
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <PrivetRoute><Services></Services></PrivetRoute>
+                element: <Services></Services>
             },
             {
                 path: '/login',
@@ -72,7 +73,7 @@ export const router = createBrowserRouter([
             {
                 path: '/serviceDittels/:id',
                 element: <ServiceDittels></ServiceDittels>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://photograghy-server.vercel.app/services/${params.id}`)
             },
         ]
     }

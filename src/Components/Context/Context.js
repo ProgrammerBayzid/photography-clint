@@ -34,6 +34,7 @@ const Context = ({ children }) => {
     const logOut = () => {
 
         setLoding(true);
+        localStorage.removeItem('token');
         return signOut(auth)
     }
     // 5. user login 
@@ -63,9 +64,8 @@ const Context = ({ children }) => {
             setLoding(false);
 
         })
-        return () => {
-            unSubscribe()
-        }
+        return () => unSubscribe()
+
     }, [])
 
     const authInfo = { user, loding, githubSingIn, createUser, updateName, login, googleSignin, logOut, forgetPassword }
