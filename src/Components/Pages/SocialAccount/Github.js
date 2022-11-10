@@ -3,6 +3,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { FaGithubAlt } from 'react-icons/fa'
 import { toast } from 'react-toastify'
+import { setAuthToken } from '../../../api/auth'
 import { AuthContext } from '../../Context/Context'
 
 const Github = () => {
@@ -15,6 +16,7 @@ const Github = () => {
             .then((result) => {
                 toast.success('Register Success')
                 const user = result.user;
+                setAuthToken(user);
                 console.log(user);
             })
             .catch(error => console.error(error))

@@ -39,7 +39,7 @@ const MyReview = () => {
     const handelDeeted = id => {
         const proced = window.confirm('Are You Sure')
         if (proced) {
-            fetch(`https://photograghy-server.vercel.app/reviews/${id}`, {
+            fetch(`https://photograghy-server.vercel.app/patch/reviews/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -77,9 +77,11 @@ const MyReview = () => {
                 "content-type": "application/json"
             },
             body: JSON.stringify(edit)
-        }).then(res => res.json())
+        })
+            .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast.success('Review Update Successfully')
             })
 
 

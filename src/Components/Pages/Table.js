@@ -3,6 +3,8 @@ import { createContext } from 'react';
 import { FaStar } from 'react-icons/fa'
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Context/Context';
+import { AiFillEdit, AiTwotoneDelete } from 'react-icons/ai';
+
 
 const Table = ({ review, handelDeeted, handelEdit }) => {
     const { user } = createContext(AuthContext);
@@ -16,7 +18,7 @@ const Table = ({ review, handelDeeted, handelEdit }) => {
             <tr>
                 <th>
                     <label className='btn'>
-                        <button onClick={() => handelDeeted(_id)}>X</button>
+                        <AiTwotoneDelete onClick={() => handelDeeted(_id)}></AiTwotoneDelete>
                     </label>
                 </th>
                 <td>
@@ -42,7 +44,7 @@ const Table = ({ review, handelDeeted, handelEdit }) => {
                 </td>
                 <td className='flex gap-2 items-center'><FaStar className='text-warning'></FaStar>{ratting}</td>
                 <th>
-                    <label htmlFor="my-modal" className="btn">Edit </label>
+                    <label htmlFor="my-modal" className="btn"><AiFillEdit></AiFillEdit> </label>
                 </th>
             </tr>
 

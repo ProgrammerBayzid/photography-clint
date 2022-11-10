@@ -13,6 +13,9 @@ import pto10 from '../../assets/img/img-galery/pto10.jfif'
 import pto11 from '../../assets/img/img-galery/pto11.jfif'
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { useState } from 'react'
+import 'react-photo-view/dist/react-photo-view.css';
+
+import { PhotoProvider, PhotoView } from 'react-photo-view'
 
 const gelaryPhotoData = [
     {
@@ -98,7 +101,11 @@ const PhotoGleary = () => {
                             }}
 
                         >
+
                             <img src={image.img} style={{ width: "auto", maxWidth: '90%', maxHeight: '990%' }} />
+
+
+
                         </div>
                     }
                 </div>
@@ -108,15 +115,20 @@ const PhotoGleary = () => {
                     <Masonry >
                         {
                             gelaryPhotoData.map(photo => (
-                                <img
-                                    data-aos="zoom-in-down"
-                                    key={photo.id}
-                                    src={photo.img}
-                                    style={{ width: '100 %', display: "block", cursor: 'pointer' }}
-                                    alt=""
-                                    onClick={() => viewImage(photo.img, photo.id)}
+                                <PhotoProvider>
+                                    <PhotoView src={photo.img}>
+                                        <img
+                                            data-aos="zoom-in-down"
+                                            key={photo.id}
+                                            src={photo.img}
+                                            style={{ width: '100 %', display: "block", cursor: 'pointer' }}
+                                            alt=""
+                                            onClick={() => viewImage(photo.img, photo.id)}
 
-                                />
+                                        />
+                                    </PhotoView>
+                                </PhotoProvider>
+
                             ))
                         }
                     </Masonry>

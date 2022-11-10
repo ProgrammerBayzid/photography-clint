@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Context/Context';
 import Spinner from './Spinner';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
 
 const Services = () => {
     useTitle('services')
@@ -29,7 +32,12 @@ const Services = () => {
                         return (
                             <div data-aos="zoom-out-down">
                                 <div className="card  lg:w-80 md:w-60 sm:w-36  bg-base-100 shadow-xl">
-                                    <figure><img src={ser.img} alt="Shoes" /></figure>
+
+                                    <PhotoProvider>
+                                        <PhotoView src={ser.img}>
+                                            <figure><img src={ser.img} alt="Shoes" /></figure>
+                                        </PhotoView>
+                                    </PhotoProvider>
                                     <div className="card-body">
                                         <h2 className="card-title">
                                             {ser.title}
@@ -52,6 +60,7 @@ const Services = () => {
                                             </div>
                                             <div className="badge gap-2"><FaStarHalfAlt className='text-warning'></FaStarHalfAlt>  {ser.ratting}</div>
                                         </div>
+                                        <Link to={`/serviceDittels/${ser._id}`}><button className='btn btn-primary'> View Details</button></Link>
                                     </div>
                                 </div>
                             </div>

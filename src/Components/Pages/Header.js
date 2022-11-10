@@ -54,8 +54,13 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="mt-5 normal-case text-xl">
-                    <img className='w-16 rounded-full' src="https://i.ibb.co/c2nT5YP/logo-png.jpg" alt="logo-png" border="0" />                </Link>
+                <div className='flex gap-3 items-center'>
+                    <Link to='/' className="mt-5 normal-case text-xl">
+                        <img className='w-16 rounded-full' src="https://i.ibb.co/c2nT5YP/logo-png.jpg" alt="logo-png" border="0" />
+                    </Link>
+                    <h1 className='text-xl font-bold mt-3'>Photo-Henter</h1>
+                </div>
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
