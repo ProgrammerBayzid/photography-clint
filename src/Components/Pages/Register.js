@@ -4,12 +4,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { setAuthToken } from '../../api/auth'
 import img2 from '../../assets/img/banner-img/img2.png'
+import useTitle from '../../hooks/useTitle'
 import { AuthContext } from '../Context/Context'
 import Github from './SocialAccount/Github'
 import Google from './SocialAccount/Google'
 
 const Register = () => {
-
+    useTitle('register')
     const { createUser, updateName, verifyEmail, googleSignin, githubSingIn } = useContext(AuthContext)
     const navigate = useNavigate();
 

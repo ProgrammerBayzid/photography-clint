@@ -21,7 +21,7 @@ const ServiceDittels = () => {
     // services feedback
 
     useEffect(() => {
-        fetch('https://photograghy-server.vercel.app/allreviews')
+        fetch(`https://photograghy-server.vercel.app/allreviews`)
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, []);
@@ -187,7 +187,7 @@ const ServiceDittels = () => {
                         {
                             feedbacks.map(fdb =>
                                 <Feedback
-                                    key={fdb.service}
+                                    key={fdb._id}
                                     fdb={fdb}
                                 ></Feedback>)
                         }
