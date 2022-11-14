@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import useTitle from '../../hooks/useTitle'
 
 const Footer = () => {
-    useTitle('footer')
 
     return (
         <div className='mt-52'>

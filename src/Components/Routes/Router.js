@@ -12,6 +12,7 @@ import Profile from "../Pages/Profile";
 import PurchaseService from "../Pages/PurchaseService";
 import Register from "../Pages/Register";
 import ServiceDittels from "../Pages/ServiceDittels";
+import ServiceReview from "../Pages/ServiceReview";
 import Services from "../Pages/Services";
 import PrivetRoute from "./PrivetRoute";
 
@@ -74,6 +75,11 @@ export const router = createBrowserRouter([
                 path: '/serviceDittels/:id',
                 element: <ServiceDittels></ServiceDittels>,
                 loader: ({ params }) => fetch(`https://photograghy-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/servicereviews/:id',
+                element: <ServiceReview></ServiceReview>,
+                loader: ({ params }) => fetch(`https://photograghy-server.vercel.app/service/reviews/${params.id}`)
             },
         ]
     }

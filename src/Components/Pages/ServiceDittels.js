@@ -11,7 +11,7 @@ import Spinner from './Spinner';
 
 const ServiceDittels = () => {
     useTitle('servicer-details')
-
+    const [refresh, setRefresh] = useState(true)
     const service = useLoaderData();
     const { user } = useContext(AuthContext)
     const email = user?.email;
@@ -21,11 +21,10 @@ const ServiceDittels = () => {
     // services feedback
 
     useEffect(() => {
-        fetch(`https://photograghy-server.vercel.app/allreviews`)
+        fetch(`https://photograghy-server.vercel.app/allreviews?service=${_id}`)
             .then(res => res.json())
             .then(data => setFeedbacks(data))
-    }, []);
-
+    }, [refresh]);
     const placeOrder = e => {
         e.preventDefault();
         const form = e.target;
@@ -74,6 +73,7 @@ const ServiceDittels = () => {
         const ratting = parseInt(form.ratting.value);
         const feedback = form.feedback.value;
         const email = user?.email || 'Unragister';
+        const time = new Date().toLocaleString();
 
         const review = {
             service: _id,
@@ -83,6 +83,7 @@ const ServiceDittels = () => {
             ratting,
             feedback,
             email,
+            time,
             userImg: user.photoURL,
         };
 
@@ -98,6 +99,7 @@ const ServiceDittels = () => {
                 console.log(data)
                 if (data.acknowledged) {
                     toast.success('Review Add Successfully')
+                    setRefresh(!refresh)
                     form.reset()
 
                 }
@@ -167,9 +169,14 @@ const ServiceDittels = () => {
 
 
 
+
+
             <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1'>
 
                 <div>
+
+
+
                     <h1 data-aos="zoom-in-down" className='px-4 text-center text-2xl sm:text-5xl md:text-3xl lg:text-5xl font-semibold my-10  '> <span className='text-orange-500'>Service </span> Feedback <br />
                     </h1>
                     <thead>

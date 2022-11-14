@@ -39,7 +39,7 @@ const MyReview = () => {
     const handelDeeted = id => {
         const proced = window.confirm('Are You Sure')
         if (proced) {
-            fetch(`https://photograghy-server.vercel.app/patch/reviews/${id}`, {
+            fetch(`https://photograghy-server.vercel.app/delete/reviews/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -47,6 +47,7 @@ const MyReview = () => {
                     console.log(data)
                     if (data.deletedCount) {
                         alert('deleted successfully');
+                        toast.success('deleted successfully')
                         const remaining = reviews?.filter(odr => odr._id !== id);
                         setReviews(remaining);
                     }
@@ -71,7 +72,7 @@ const MyReview = () => {
             feedback,
             email,
         };
-        fetch(`https://photograghy-server.vercel.app/reviews/${id}`, {
+        fetch(`https://photograghy-server.vercel.app/patch/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 "content-type": "application/json"
